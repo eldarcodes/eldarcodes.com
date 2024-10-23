@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -13,6 +14,15 @@ export default {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+    },
+
+    fontFamily: {
+      sans: [
+        ["var(--font-inter)", ...defaultTheme.fontFamily.sans].join(", "),
+        {
+          fontFeatureSettings: '"ss03","cv02","cv11"',
+        },
+      ],
     },
   },
   future: {

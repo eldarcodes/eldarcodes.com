@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = localFont({
+  src: [
+    {
+      path: "../public/fonts/Inter/Inter-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+
+    {
+      path: "../public/fonts/Inter/Inter-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eldarcodes.com"),
@@ -50,13 +66,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
-        <main>
-          {children}
+    <html lang="en" className={inter.variable}>
+      <body className="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
+        {children}
 
-          <Analytics />
-        </main>
+        <Analytics />
       </body>
     </html>
   );
