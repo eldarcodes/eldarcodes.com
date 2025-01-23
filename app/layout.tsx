@@ -70,16 +70,16 @@ export default function RootLayout({
       <head>
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-X8Z78NDCSK"
+          src="https://www.googletagmanager.com/gtag/js?id=G-KX7ND3XG90"
         ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-X8Z78NDCSK');
-            `,
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KX7ND3XG90');
+          `,
           }}
         ></script>
       </head>
